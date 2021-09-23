@@ -150,19 +150,24 @@ public class MemberDaoImplementation implements MemberDao {
 		ResultSet resultSet = null;
 		try {
 			connection = ConnectionFactory.getConnection();
-			preparedStatement = connection
-					.prepareStatement("select datediff(due_date,issue_date) from bookreg where member_id=?;");
+			preparedStatement = connection.prepareStatement("select datediff (return_date,due_date) as diff from bookreg where member_id=?");
 
 			preparedStatement.setInt(1, member_id);
 
-			r = preparedStatement.executeUpdate();
-			
+			resultSet = preparedStatement.executeQuery();
+			//System.out.println(resultSet.next());
 			  
 			  while(resultSet.next())
 			  {
 				
-				  System.out.println(resultSet.getInt(member_id));	
-				  System.out.println("Date Diff" + resultSet);
+	           	int status5 =resultSet.getInt(1);
+	           	int fine = 0;
+	           	if(status5>0)
+	           	{
+	           		 fine = status5*10;
+	           	}
+	          
+				  System.out.println("fine = " + fine);
 			  }
 		} catch (Exception e) {
 			// TODO: handle exception

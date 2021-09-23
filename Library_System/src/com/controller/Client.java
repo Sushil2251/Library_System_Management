@@ -33,7 +33,7 @@ public class Client {
 	switch(choice)
 	{
 	case 1:
-	System.out.println("**********   All book details ***************");
+	System.out.println("********** All book details ***************");
 	while (itr.hasNext()) {
 		Book book = (Book) itr.next();
 		System.out.println("book_id:- "+ book.getBook_id());
@@ -144,15 +144,11 @@ break;
 break;
 	
 	case 8:
-		System.out.println("Date diff");
+		System.out.println("Fine Of Member");
 		System.out.println("Enter member id");
 		int member_id2 = scanner.nextInt();
-	int status5=memberService.dateDiff(member_id2);
-		 if(status5>0) {
-		    	System.out.println("Member Delete sucessfully.....");
-		    }else {
-		    	System.out.println("Unable to Member book......");
-		    }
+	      memberService.dateDiff(member_id2);
+			
 		break;
 	}
 	System.out.println(" Do you Want Perform More Opretions yes / no");
