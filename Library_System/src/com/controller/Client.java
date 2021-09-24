@@ -21,7 +21,8 @@ public class Client {
 	do
 	{
 	Scanner scanner=new Scanner(System.in);
-	System.out.println("1.Book_Details"+"\n"+"2.Add_Book"+"\n"+"3.Delete_Record"+"\n"+"4.Update_Record"+"\n"+"5.Member_Details"+"\n"+"6.Add_Member"+"\n"+"7.Delete_Member"+"\n"+"8.Display issue date due date difference of member");
+	System.out.println("1.Book_Details"+"\n"+"2.Add_Book"+"\n"+"3.Delete_Record"+"\n"+"4.Update_Record"+"\n"+"5.Member_Details"+"\n"+"6.Add_Member"+"\n"+"7.Delete_Member"+"\n"+"8.Calculate Fine Of Member");
+	System.out.println("______________________________________________________________");
 	System.out.println("\nEnter Choice");
 	int choice = scanner.nextInt();
 
@@ -41,7 +42,7 @@ public class Client {
 		System.out.println("book_price:- "+ book.getBook_price());
 		System.out.println("author_id:- "+ book.getAuthor_id());
 		System.out.println("category_id:- "+ book.getCategory_id());
-
+		System.out.println("\n");
 		System.out.println("**************************************");
 	}
 	
@@ -101,7 +102,7 @@ break;
 	
 	case 5:
 		
-	System.out.println("**********   All Member details ***************");
+	System.out.println("***********All Book Details***********");
 	while (itr1.hasNext())
 	{
 		Member member = (Member) itr1.next();
@@ -115,9 +116,9 @@ break;
 	break;
 	case 6:
 		System.out.println("ADD Member");
-		System.out.println("Fill Up Member ID");
+		System.out.println("Please Asign Member ID");
 		int member_id = scanner.nextInt();
-		System.out.println("Fill Up Member Name");
+		System.out.println("Fill Asign Member Name");
 		String member_name = scanner.next();
 	       	Member member = new Member(member_id,member_name);
 	       	int status3=memberService.addMember(member);
@@ -129,9 +130,10 @@ break;
 		    }
 	       	break;
 	case 7:
+
 	
 	System.out.println("Delete Member");
-	System.out.println("Fill Up Member ID");
+	System.out.println("Enter Member ID To Delete Member In Record");
 	
 	int member_id1 = scanner.nextInt();
 	int status4=memberService.deleteMember(member_id1);
@@ -144,7 +146,7 @@ break;
 break;
 	
 	case 8:
-		System.out.println("Fine Of Member");
+		System.out.println(" Calculate Fine Of Member");
 		System.out.println("Enter member id");
 		int member_id2 = scanner.nextInt();
 	      memberService.dateDiff(member_id2);
@@ -155,5 +157,6 @@ break;
 	str=scanner.next();
 	}
 	while(str.equals("YES")||str.equals("yes"));
+	
 	}
 }
