@@ -17,14 +17,13 @@ public class Client {
 		String str;
 	BookService bookService = new BookServiceImplementation();
 	MemberService memberService = new MemberServiceImplementation();
-
 	do
 	{
 	Scanner scanner=new Scanner(System.in);
 	System.out.println("______________________________________________________________");
 	System.out.println("");
 	System.out.println("");
-	System.out.println("                  LIBRARY_MANAGEMENT_SYSTEM\n");
+	System.out.println("                         JUST BOOKS                         \n");
 	System.out.println("______________________________________________________________");
 	System.out.println("1.  Book_Details"+"\n"+"2.  Add_Book"+"\n"+"3.  Delete_Record"+"\n"+"4.  Update_Record"+"\n"+"5.  Member_Details"+"\n"+"6.  Add_Member"+"\n"+"7.  Delete_Member"+"\n"+"8.  Calculate Fine Of Member");
 	System.out.println("______________________________________________________________");
@@ -105,6 +104,7 @@ break;
 	case 4:
 		System.out.println("Fill Details To Update Below Mention Field");
 	int book_id2 = scanner.nextInt();
+	System.out.println("______________________________________________________________");
 	System.out.println("Enter Book Price To Update");
 	int book_price1 = scanner.nextInt();
 	System.out.println("______________________________________________________________");
